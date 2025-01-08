@@ -101,7 +101,7 @@
                     <h3 class="text-xl font-bold mb-3 text-white">Zero Trust Architecture: Beyond Traditional Security</h3>
                     <p class="text-gray-300 mb-4">Exploring the principles and implementation of zero trust security models in modern enterprises.</p>
                     <div class="flex items-center">
-                        <img src="/api/placeholder/40/40" alt="Author" class="rounded-full">
+                        <img src="https://i.pinimg.com/736x/0e/ff/e8/0effe817959671e3f63c784354a789f8.jpg" alt="Author" class="lg-person">
                         <div class="ml-3">
                             <p class="text-sm font-medium text-white">Sarah Chen</p>
                             <p class="text-xs text-gray-400">Security Analyst</p>
@@ -114,7 +114,7 @@
                     <h3 class="text-xl font-bold mb-3 text-white">The Evolution of Decentralized Applications</h3>
                     <p class="text-gray-300 mb-4">Understanding the impact of blockchain technology on modern application architecture.</p>
                     <div class="flex items-center">
-                        <img src="/api/placeholder/40/40" alt="Author" class="rounded-full">
+                        <img src="https://i.pinimg.com/736x/01/d2/08/01d2081a1e1e65e54be7ef5d439ea9fc.jpg" alt="Author" class="lg-person">
                         <div class="ml-3">
                             <p class="text-sm font-medium text-white">Marcus Johnson</p>
                             <p class="text-xs text-gray-400">Blockchain Developer</p>
@@ -127,7 +127,7 @@
                     <h3 class="text-xl font-bold mb-3 text-white">Transformers in Natural Language Processing</h3>
                     <p class="text-gray-300 mb-4">Deep dive into the architecture transforming language understanding and generation.</p>
                     <div class="flex items-center">
-                        <img src="/api/placeholder/40/40" alt="Author" class="rounded-full">
+                        <img src="https://i.pinimg.com/736x/e4/3b/78/e43b787ca706af6a718060b96aebda68.jpg" alt="Author" class="lg-person">
                         <div class="ml-3">
                             <p class="text-sm font-medium text-white">Dr. Emily Wong</p>
                             <p class="text-xs text-gray-400">AI Researcher</p>
@@ -138,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Technologies Section -->
     <section id="technologies" class="py-20">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Emerging Technologies</h2>
@@ -157,6 +156,43 @@
                     <i class="ri-database-2-line text-6xl mb-6 text-green-400"></i>
                     <h3 class="text-2xl font-bold mb-4">Big Data Analytics</h3>
                     <p class="text-gray-300">Transforming raw data into actionable insights through advanced analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="quiz">
+        <div class="container">
+            <h2 class="gradient-text">Test Your Tech Knowledge</h2>
+            
+            <div class="glass-card" id="quiz-container">
+                <div id="quiz-start" class="fade-in">
+                    <p class="text-center" style="color: #cbd5e1; font-size: 1.25rem; margin-bottom: 2rem;">
+                        Challenge yourself with our tech quizzes! Select a topic to begin.
+                    </p>
+                    <div class="grid">
+                        <button class="topic-btn scale-up" data-topic="ai">Artificial Intelligence</button>
+                        <button class="topic-btn scale-up" data-topic="web3">Web3 & Blockchain</button>
+                        <button class="topic-btn scale-up" data-topic="cloud">Cloud Computing</button>
+                        <button class="topic-btn scale-up" data-topic="security">Cybersecurity</button>
+                    </div>
+                </div>
+
+                <div id="quiz-questions" class="hidden fade-in">
+                    <div>
+                        <h3 id="question-text" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;"></h3>
+                        <div id="options-container"></div>
+                    </div>
+                    <div class="quiz-nav">
+                        <span id="question-counter" style="color: #cbd5e1;"></span>
+                        <button id="next-btn" class="hidden">Next Question</button>
+                    </div>
+                </div>
+
+                <div id="quiz-results" class="hidden fade-in">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Quiz Complete!</h3>
+                    <div id="score-display"></div>
+                    <div id="result-message" style="color: #cbd5e1; margin-bottom: 2rem;"></div>
+                    <button id="restart-btn" class="topic-btn" data-topic="ai">Try Another Quiz</button>
                 </div>
             </div>
         </div>

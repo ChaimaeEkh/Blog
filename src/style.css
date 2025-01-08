@@ -273,3 +273,211 @@ transform: translateY(0);
     transform: translateY(-5px);
     color: var(--primary-color);
 }
+
+:root {
+    --gradient-bg: linear-gradient(135deg, #1a1c2c 0%, #13151d 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --blue-gradient: linear-gradient(to right, #3b82f6, #1d4ed8);
+    --purple-gradient: linear-gradient(to right, #8b5cf6, #6d28d9);
+    --text-gradient: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--gradient-bg);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+#quiz {
+    padding: 5rem 1rem;
+}
+
+.container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+/* Title Styles */
+.gradient-text {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Glass Card Styles */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Button Styles */
+.topic-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: 200% auto;
+}
+
+.topic-btn[data-topic="ai"] {
+    background-image: linear-gradient(to right, #3b82f6, #1d4ed8, #3b82f6);
+}
+
+.topic-btn[data-topic="web3"] {
+    background-image: linear-gradient(to right, #8b5cf6, #6d28d9, #8b5cf6);
+}
+
+.topic-btn[data-topic="cloud"] {
+    background-image: linear-gradient(to right, #10b981, #059669, #10b981);
+}
+
+.topic-btn[data-topic="security"] {
+    background-image: linear-gradient(to right, #f59e0b, #d97706, #f59e0b);
+}
+
+.topic-btn:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+}
+
+/* Option Button Styles */
+.option-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    background: var(--glass-bg);
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover:not(.selected):not(.correct):not(.incorrect) {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.option-btn.selected {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.option-btn.correct {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.option-btn.incorrect {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.2);
+}
+
+/* Navigation and Counter Styles */
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#next-btn {
+    background: var(--blue-gradient);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Results Styles */
+#quiz-results {
+    text-align: center;
+}
+
+#score-display {
+    font-size: 4rem;
+    font-weight: bold;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 1.5rem 0;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scale-up {
+    animation: scaleUp 0.3s ease-out;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+.lg-person{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
