@@ -228,3 +228,25 @@ function resetQuiz() {
     score = 0;
     selectedOption = null;
 }
+
+// light mode
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    }
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+        gsap.to(themeToggle, {
+            rotate: 360,
+            duration: 0.5,
+            ease: 'power2.inOut',
+            onComplete: () => {
+                themeToggle.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+});

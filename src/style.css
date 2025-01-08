@@ -467,3 +467,83 @@ body {
     border-radius: 50%;
     object-fit: cover;
 }
+
+:root {
+    --light-background: #f8fafc;
+    --light-text: #1e293b;
+    --light-card-bg: #ffffff;
+    --light-border: #e2e8f0;
+  }
+  
+  .light-theme {
+    --background-color: var(--light-background);
+    --text-color: var(--light-text);
+    --card-background: var(--light-card-bg);
+  }
+  
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .theme-toggle i {
+    font-size: 1.25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+  }
+  
+  .theme-toggle .light-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  
+  .light-theme .theme-toggle .light-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  
+  .light-theme .theme-toggle .dark-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  /* Light theme specific modifications */
+  .light-theme {
+    color: var(--light-text);
+  }
+  
+  .light-theme .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--light-border);
+  }
+  
+  .light-theme .parallax-bg {
+    background: radial-gradient(circle at 50% 50%, #f8fafc 0%, #e2e8f0 100%);
+  }
+  
+  .light-theme .nav-link {
+    color: var(--light-text);
+  }
+  
+  .light-theme .text-gray-300 {
+    color: #475569;
+  }
+  
+  .light-theme .text-gray-400 {
+    color: #64748b;
+  }
