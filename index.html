@@ -1,280 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechPulse - Leading Tech Insights & Innovation Hub</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <link rel="stylesheet" href="src/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
     <div class="parallax-bg"></div>
     <div class="scroll-indicator" id="scroll-indicator"></div>
-
-    <!-- Enhanced Navigation -->
     <nav class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                <a href="#" class="text-3xl font-bold gradient-text">TechPulse</a>
-                <div class="hidden md:flex space-x-8 items-center desktop-menu">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition">Home</a>
-                    <a href="#featured" class="nav-link text-gray-300 hover:text-white transition">Featured</a>
-                    <a href="#insights" class="nav-link text-gray-300 hover:text-white transition">Insights</a>
-                    <a href="#technologies" class="nav-link text-gray-300 hover:text-white transition">Tech Hub</a>
-                    <a href="#newsletter" class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition transform hover:scale-105">
-                        Subscribe Now
-                    </a>
-                </div>
-                <button class="menu-toggle text-white md:hidden" id="menu-toggle">
-                    <i class="ri-menu-line"></i>
-                </button>
-            </div>
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+          <a href="#" class="text-3xl font-bold gradient-text">TechPulse</a>
+          <div class="hidden md:flex space-x-8 items-center desktop-menu">
+            <a
+              href="#home"
+              class="nav-link text-gray-300 hover:text-white transition"
+              >Home</a
+            >
+            <a
+              href="#featured"
+              class="nav-link text-gray-300 hover:text-white transition"
+              >Featured</a
+            >
+            <a
+              href="#insights"
+              class="nav-link text-gray-300 hover:text-white transition"
+              >Insights</a
+            >
+            <a
+              href="#technologies"
+              class="nav-link text-gray-300 hover:text-white transition"
+              >Tech Hub</a
+            >
+            <a
+              href="#newsletter"
+              class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition transform hover:scale-105"
+            >
+              Subscribe Now
+            </a>
+          </div>
+          <button class="menu-toggle text-white md:hidden" id="menu-toggle">
+            <i class="ri-menu-line"></i>
+          </button>
         </div>
+      </div>
     </nav>
     <div id="mobile-menu" class="fixed">
-        <button id="close-menu" class="absolute top-6 right-6 text-white text-2xl">
-            <i class="ri-close-line"></i>
-        </button>
-        <div class="flex flex-col items-center space-y-8">
-            <a href="#home" class="mobile-nav-link text-white hover:text-blue-400">Home</a>
-            <a href="#featured" class="mobile-nav-link text-white hover:text-blue-400">Featured</a>
-            <a href="#insights" class="mobile-nav-link text-white hover:text-blue-400">Insights</a>
-            <a href="#technologies" class="mobile-nav-link text-white hover:text-blue-400">Tech Hub</a>
-            <a href="#newsletter" class="mobile-nav-link text-white hover:text-blue-400">Subscribe</a>
-        </div>
+      <button
+        id="close-menu"
+        class="absolute top-6 right-6 text-white text-2xl"
+      >
+        <i class="ri-close-line"></i>
+      </button>
+      <div class="flex flex-col items-center space-y-8">
+        <a href="#home" class="mobile-nav-link text-white hover:text-blue-400"
+          >Home</a
+        >
+        <a
+          href="#featured"
+          class="mobile-nav-link text-white hover:text-blue-400"
+          >Featured</a
+        >
+        <a
+          href="#insights"
+          class="mobile-nav-link text-white hover:text-blue-400"
+          >Insights</a
+        >
+        <a
+          href="#technologies"
+          class="mobile-nav-link text-white hover:text-blue-400"
+          >Tech Hub</a
+        >
+        <a
+          href="#newsletter"
+          class="mobile-nav-link text-white hover:text-blue-400"
+          >Subscribe</a
+        >
+      </div>
     </div>
-
-    <!-- Hero Section -->
-    <header id="home" class="min-h-screen flex items-center justify-center text-center py-32 px-4 relative">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-7xl font-bold mb-8 gradient-text floating-element">
-                <span id="typed-output"></span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-12 text-gray-300">
-                Exploring the intersection of innovation, technology, and future possibilities.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#featured" class="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition transform hover:scale-105 shadow-lg">
-                    Explore Latest Insights
-                </a>
-                <a href="#technologies" class="px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition transform hover:scale-105">
-                    Discover Technologies
-                </a>
-            </div>
+    <header
+      id="home"
+      class="min-h-screen flex items-center justify-center text-center py-32 px-4 relative"
+    >
+      <div class="max-w-4xl mx-auto">
+        <h1
+          class="text-6xl md:text-7xl font-bold mb-8 gradient-text floating-element"
+        >
+          <span id="typed-output"></span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-12 text-gray-300">
+          Exploring the intersection of innovation, technology, and future
+          possibilities.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-6">
+          <a
+            href="#featured"
+            class="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition transform hover:scale-105 shadow-lg"
+          >
+            Explore Latest Insights
+          </a>
+          <a
+            href="#technologies"
+            class="px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition transform hover:scale-105"
+          >
+            Discover Technologies
+          </a>
         </div>
+      </div>
     </header>
-
-    <!-- Featured Section -->
     <section id="featured" class="py-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Featured Stories</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="featured-post glass-card rounded-xl overflow-hidden">
-                    <img src="https://i.pinimg.com/736x/87/85/c7/8785c7c5592d1c91e300338f854c81ce.jpg" alt="AI Innovation" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <span class="text-blue-400 text-sm">ARTIFICIAL INTELLIGENCE</span>
-                        <h3 class="text-2xl font-bold mt-2 mb-4">The Future of AI in Enterprise Solutions</h3>
-                        <p class="text-gray-300">Exploring how artificial intelligence is revolutionizing business operations and decision-making processes.</p>
-                    </div>
-                </div>
-                <div class="featured-post glass-card rounded-xl overflow-hidden">
-                    <img src="https://i.pinimg.com/736x/91/fc/ed/91fced729a9ceb98fc3889b23a38c184.jpg" alt="Quantum Computing" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <span class="text-purple-400 text-sm">QUANTUM COMPUTING</span>
-                        <h3 class="text-2xl font-bold mt-2 mb-4">Quantum Supremacy: A New Era of Computing</h3>
-                        <p class="text-gray-300">Understanding the implications of quantum computing breakthroughs and their impact on cryptography.</p>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">
+          Featured Stories
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="featured-post glass-card rounded-xl overflow-hidden">
+            <img
+              src="https://i.pinimg.com/736x/87/85/c7/8785c7c5592d1c91e300338f854c81ce.jpg"
+              alt="AI Innovation"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-blue-400 text-sm">ARTIFICIAL INTELLIGENCE</span>
+              <h3 class="text-2xl font-bold mt-2 mb-4">
+                The Future of AI in Enterprise Solutions
+              </h3>
+              <p class="text-gray-300">
+                Exploring how artificial intelligence is revolutionizing
+                business operations and decision-making processes.
+              </p>
             </div>
+          </div>
+          <div class="featured-post glass-card rounded-xl overflow-hidden">
+            <img
+              src="https://i.pinimg.com/736x/91/fc/ed/91fced729a9ceb98fc3889b23a38c184.jpg"
+              alt="Quantum Computing"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-purple-400 text-sm">QUANTUM COMPUTING</span>
+              <h3 class="text-2xl font-bold mt-2 mb-4">
+                Quantum Supremacy: A New Era of Computing
+              </h3>
+              <p class="text-gray-300">
+                Understanding the implications of quantum computing
+                breakthroughs and their impact on cryptography.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <section id="insights" class="py-20 bg-gray-900 bg-opacity-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Latest Insights</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <article class="insight-card rounded-xl overflow-hidden bg-gray-800 p-6">
-                    <span class="tag mb-4">Cybersecurity</span>
-                    <h3 class="text-xl font-bold mb-3 text-white">Zero Trust Architecture: Beyond Traditional Security</h3>
-                    <p class="text-gray-300 mb-4">Exploring the principles and implementation of zero trust security models in modern enterprises.</p>
-                    <div class="flex items-center">
-                        <img src="https://i.pinimg.com/736x/0e/ff/e8/0effe817959671e3f63c784354a789f8.jpg" alt="Author" class="lg-person">
-                        <div class="ml-3">
-                            <p class="text-sm font-medium text-white">Sarah Chen</p>
-                            <p class="text-xs text-gray-400">Security Analyst</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="insight-card rounded-xl overflow-hidden bg-gray-800 p-6">
-                    <span class="tag mb-4">Web3</span>
-                    <h3 class="text-xl font-bold mb-3 text-white">The Evolution of Decentralized Applications</h3>
-                    <p class="text-gray-300 mb-4">Understanding the impact of blockchain technology on modern application architecture.</p>
-                    <div class="flex items-center">
-                        <img src="https://i.pinimg.com/736x/01/d2/08/01d2081a1e1e65e54be7ef5d439ea9fc.jpg" alt="Author" class="lg-person">
-                        <div class="ml-3">
-                            <p class="text-sm font-medium text-white">Marcus Johnson</p>
-                            <p class="text-xs text-gray-400">Blockchain Developer</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="insight-card rounded-xl overflow-hidden bg-gray-800 p-6">
-                    <span class="tag mb-4">Machine Learning</span>
-                    <h3 class="text-xl font-bold mb-3 text-white">Transformers in Natural Language Processing</h3>
-                    <p class="text-gray-300 mb-4">Deep dive into the architecture transforming language understanding and generation.</p>
-                    <div class="flex items-center">
-                        <img src="https://i.pinimg.com/736x/e4/3b/78/e43b787ca706af6a718060b96aebda68.jpg" alt="Author" class="lg-person">
-                        <div class="ml-3">
-                            <p class="text-sm font-medium text-white">Dr. Emily Wong</p>
-                            <p class="text-xs text-gray-400">AI Researcher</p>
-                        </div>
-                    </div>
-                </article>
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">
+          Latest Insights
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article
+            class="insight-card rounded-xl overflow-hidden bg-gray-800 p-6"
+          >
+            <span class="tag mb-4">Cybersecurity</span>
+            <h3 class="text-xl font-bold mb-3 text-white">
+              Zero Trust Architecture: Beyond Traditional Security
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Exploring the principles and implementation of zero trust security
+              models in modern enterprises.
+            </p>
+            <div class="flex items-center">
+              <img
+                src="https://i.pinimg.com/736x/0e/ff/e8/0effe817959671e3f63c784354a789f8.jpg"
+                alt="Author"
+                class="lg-person"
+              />
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">Sarah Chen</p>
+                <p class="text-xs text-gray-400">Security Analyst</p>
+              </div>
             </div>
+          </article>
+
+          <article
+            class="insight-card rounded-xl overflow-hidden bg-gray-800 p-6"
+          >
+            <span class="tag mb-4">Web3</span>
+            <h3 class="text-xl font-bold mb-3 text-white">
+              The Evolution of Decentralized Applications
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Understanding the impact of blockchain technology on modern
+              application architecture.
+            </p>
+            <div class="flex items-center">
+              <img
+                src="https://i.pinimg.com/736x/01/d2/08/01d2081a1e1e65e54be7ef5d439ea9fc.jpg"
+                alt="Author"
+                class="lg-person"
+              />
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">Marcus Johnson</p>
+                <p class="text-xs text-gray-400">Blockchain Developer</p>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="insight-card rounded-xl overflow-hidden bg-gray-800 p-6"
+          >
+            <span class="tag mb-4">Machine Learning</span>
+            <h3 class="text-xl font-bold mb-3 text-white">
+              Transformers in Natural Language Processing
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Deep dive into the architecture transforming language
+              understanding and generation.
+            </p>
+            <div class="flex items-center">
+              <img
+                src="https://i.pinimg.com/736x/e4/3b/78/e43b787ca706af6a718060b96aebda68.jpg"
+                alt="Author"
+                class="lg-person"
+              />
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">Dr. Emily Wong</p>
+                <p class="text-xs text-gray-400">AI Researcher</p>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
     <section id="technologies" class="py-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Emerging Technologies</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="tech-card glass-card p-8 rounded-xl">
-                    <i class="ri-robot-line text-6xl mb-6 text-blue-400"></i>
-                    <h3 class="text-2xl font-bold mb-4">Artificial Intelligence</h3>
-                    <p class="text-gray-300">Exploring neural networks, machine learning, and cognitive computing advancements.</p>
-                </div>
-                <div class="tech-card glass-card p-8 rounded-xl">
-                    <i class="ri-cloud-line text-6xl mb-6 text-purple-400"></i>
-                    <h3 class="text-2xl font-bold mb-4">Cloud Computing</h3>
-                    <p class="text-gray-300">Next-generation cloud architectures and serverless computing solutions.</p>
-                </div>
-                <div class="tech-card glass-card p-8 rounded-xl">
-                    <i class="ri-database-2-line text-6xl mb-6 text-green-400"></i>
-                    <h3 class="text-2xl font-bold mb-4">Big Data Analytics</h3>
-                    <p class="text-gray-300">Transforming raw data into actionable insights through advanced analytics.</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 gradient-text">
+          Emerging Technologies
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="tech-card glass-card p-8 rounded-xl">
+            <i class="ri-robot-line text-6xl mb-6 text-blue-400"></i>
+            <h3 class="text-2xl font-bold mb-4">Artificial Intelligence</h3>
+            <p class="text-gray-300">
+              Exploring neural networks, machine learning, and cognitive
+              computing advancements.
+            </p>
+          </div>
+          <div class="tech-card glass-card p-8 rounded-xl">
+            <i class="ri-cloud-line text-6xl mb-6 text-purple-400"></i>
+            <h3 class="text-2xl font-bold mb-4">Cloud Computing</h3>
+            <p class="text-gray-300">
+              Next-generation cloud architectures and serverless computing
+              solutions.
+            </p>
+          </div>
+          <div class="tech-card glass-card p-8 rounded-xl">
+            <i class="ri-database-2-line text-6xl mb-6 text-green-400"></i>
+            <h3 class="text-2xl font-bold mb-4">Big Data Analytics</h3>
+            <p class="text-gray-300">
+              Transforming raw data into actionable insights through advanced
+              analytics.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <section id="quiz">
-        <div class="container">
-            <h2 class="gradient-text">Test Your Tech Knowledge</h2>
-            
-            <div class="glass-card" id="quiz-container">
-                <div id="quiz-start" class="fade-in">
-                    <p class="text-center" style="color: #cbd5e1; font-size: 1.25rem; margin-bottom: 2rem;">
-                        Challenge yourself with our tech quizzes! Select a topic to begin.
-                    </p>
-                    <div class="grid">
-                        <button class="topic-btn scale-up" data-topic="ai">Artificial Intelligence</button>
-                        <button class="topic-btn scale-up" data-topic="web3">Web3 & Blockchain</button>
-                        <button class="topic-btn scale-up" data-topic="cloud">Cloud Computing</button>
-                        <button class="topic-btn scale-up" data-topic="security">Cybersecurity</button>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="gradient-text">Test Your Tech Knowledge</h2>
 
-                <div id="quiz-questions" class="hidden fade-in">
-                    <div>
-                        <h3 id="question-text" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;"></h3>
-                        <div id="options-container"></div>
-                    </div>
-                    <div class="quiz-nav">
-                        <span id="question-counter" style="color: #cbd5e1;"></span>
-                        <button id="next-btn" class="hidden">Next Question</button>
-                    </div>
-                </div>
-
-                <div id="quiz-results" class="hidden fade-in">
-                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Quiz Complete!</h3>
-                    <div id="score-display"></div>
-                    <div id="result-message" style="color: #cbd5e1; margin-bottom: 2rem;"></div>
-                    <button id="restart-btn" class="topic-btn" data-topic="ai">Try Another Quiz</button>
-                </div>
+        <div class="glass-card" id="quiz-container">
+          <div id="quiz-start" class="fade-in">
+            <p
+              class="text-center"
+              style="color: #cbd5e1; font-size: 1.25rem; margin-bottom: 2rem"
+            >
+              Challenge yourself with our tech quizzes! Select a topic to begin.
+            </p>
+            <div class="grid">
+              <button class="topic-btn scale-up" data-topic="ai">
+                Artificial Intelligence
+              </button>
+              <button class="topic-btn scale-up" data-topic="web3">
+                Web3 & Blockchain
+              </button>
+              <button class="topic-btn scale-up" data-topic="cloud">
+                Cloud Computing
+              </button>
+              <button class="topic-btn scale-up" data-topic="security">
+                Cybersecurity
+              </button>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="py-20 animate-gradient">
-        <div class="max-w-3xl mx-auto text-center px-4">
-            <h2 class="text-4xl font-bold mb-8">Stay Ahead of Tech Trends</h2>
-            <p class="text-xl mb-12 opacity-90">Join our community of innovators and receive curated tech insights weekly.</p>
-            <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
-                <input type="email" placeholder="Enter your email" class="flex-grow px-6 py-4 rounded-full bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <button type="submit" class="px-8 py-4 bg-white text-gray-900 rounded-full hover:bg-opacity-90 transition transform hover:scale-105">
-                    Subscribe Now
-                </button>
-            </form>
+          <div id="quiz-questions" class="hidden fade-in">
+            <div>
+              <h3
+                id="question-text"
+                style="
+                  font-size: 1.5rem;
+                  font-weight: bold;
+                  margin-bottom: 1.5rem;
+                "
+              ></h3>
+              <div id="options-container"></div>
+            </div>
+            <div class="quiz-nav">
+              <span id="question-counter" style="color: #cbd5e1"></span>
+              <button id="next-btn" class="hidden">Next Question</button>
+            </div>
+          </div>
+
+          <div id="quiz-results" class="hidden fade-in">
+            <h3
+              style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem"
+            >
+              Quiz Complete!
+            </h3>
+            <div id="score-display"></div>
+            <div
+              id="result-message"
+              style="color: #cbd5e1; margin-bottom: 2rem"
+            ></div>
+            <button id="restart-btn" class="topic-btn" data-topic="ai">
+              Try Another Quiz
+            </button>
+          </div>
         </div>
+      </div>
+    </section>
+    <section id="newsletter" class="py-20 animate-gradient">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-4xl font-bold mb-8">Stay Ahead of Tech Trends</h2>
+        <p class="text-xl mb-12 opacity-90">
+          Join our community of innovators and receive curated tech insights
+          weekly.
+        </p>
+        <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-grow px-6 py-4 rounded-full bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            class="px-8 py-4 bg-white text-gray-900 rounded-full hover:bg-opacity-90 transition transform hover:scale-105"
+          >
+            Subscribe Now
+          </button>
+        </form>
+      </div>
     </section>
     <footer class="bg-gray-900 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-12 mb-16">
-                <div>
-                    <h3 class="text-2xl font-bold gradient-text mb-6">TechPulse</h3>
-                    <p class="text-gray-400 mb-6">Empowering innovation through insights and analysis in the ever-evolving tech landscape.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500">
-                            <i class="ri-twitter-fill text-2xl"></i>
-                        </a>
-                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500">
-                            <i class="ri-linkedin-fill text-2xl"></i>
-                        </a>
-                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500">
-                            <i class="ri-github-fill text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-6">Quick Links</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Our Team</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-6">Resources</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Research Papers</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Documentation</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-6">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Get the latest tech insights delivered to your inbox.</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+          <div>
+            <h3 class="text-2xl font-bold gradient-text mb-6">TechPulse</h3>
+            <p class="text-gray-400 mb-6">
+              Empowering innovation through insights and analysis in the
+              ever-evolving tech landscape.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon text-gray-400 hover:text-blue-500">
+                <i class="ri-twitter-fill text-2xl"></i>
+              </a>
+              <a href="#" class="social-icon text-gray-400 hover:text-blue-500">
+                <i class="ri-linkedin-fill text-2xl"></i>
+              </a>
+              <a href="#" class="social-icon text-gray-400 hover:text-blue-500">
+                <i class="ri-github-fill text-2xl"></i>
+              </a>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2025 TechPulse. All rights reserved.</p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="footer-link text-sm text-gray-400 hover:text-white">Privacy Policy</a>
-                        <a href="#" class="footer-link text-sm text-gray-400 hover:text-white">Terms of Service</a>
-                        <a href="#" class="footer-link text-sm text-gray-400 hover:text-white">Cookie Policy</a>
-                    </div>
-                </div>
-            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-6">Quick Links</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Our Team</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-6">Resources</h4>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Research Papers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link text-gray-400 hover:text-white"
+                  >Documentation</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-6">Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Get the latest tech insights delivered to your inbox.
+            </p>
+            <form class="space-y-4">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+              />
+              <button
+                type="submit"
+                class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
+
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">
+              © 2025 TechPulse. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+              <a
+                href="#"
+                class="footer-link text-sm text-gray-400 hover:text-white"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="footer-link text-sm text-gray-400 hover:text-white"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="footer-link text-sm text-gray-400 hover:text-white"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="src/script.js"></script>
-</body>
+  </body>
 </html>

@@ -200,8 +200,6 @@ transition: opacity 0.3s ease, transform 0.3s ease;
 opacity: 1;
 transform: translateY(0);
 }
-
-
 #mobile-menu {
     position: fixed;
     top: 0;
@@ -221,8 +219,6 @@ transform: translateY(0);
 .mobile-menu-active {
     right: 0 !important;
 }
-
-/* New Insights section styles */
 .insight-card {
     transition: all 0.4s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -244,7 +240,6 @@ transform: translateY(0);
     color: #3B82F6;
 }
 
-/* Footer animations */
 .footer-link {
     position: relative;
     transition: all 0.3s ease;
@@ -291,7 +286,6 @@ body {
     min-height: 100vh;
 }
 
-/* Container Styles */
 #quiz {
     padding: 5rem 1rem;
 }
@@ -301,7 +295,6 @@ body {
     margin: 0 auto;
 }
 
-/* Title Styles */
 .gradient-text {
     background: var(--text-gradient);
     -webkit-background-clip: text;
@@ -313,7 +306,6 @@ body {
     margin-bottom: 3rem;
 }
 
-/* Glass Card Styles */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -323,7 +315,6 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Button Styles */
 .topic-btn {
     width: 100%;
     padding: 1rem 1.5rem;
@@ -358,7 +349,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Option Button Styles */
 .option-btn {
     width: 100%;
     padding: 1rem 1.5rem;
@@ -392,7 +382,6 @@ body {
     background: rgba(239, 68, 68, 0.2);
 }
 
-/* Navigation and Counter Styles */
 .quiz-nav {
     display: flex;
     justify-content: space-between;
@@ -415,7 +404,6 @@ body {
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* Results Styles */
 #quiz-results {
     text-align: center;
 }
@@ -430,7 +418,6 @@ body {
     margin: 1.5rem 0;
 }
 
-/* Utility Classes */
 .hidden {
     display: none;
 }
@@ -447,7 +434,6 @@ body {
     }
 }
 
-/* Animation Classes */
 .fade-in {
     animation: fadeIn 0.5s ease-in;
 }

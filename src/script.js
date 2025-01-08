@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fixed Mobile Menu Toggle
+    // menutoggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenu = document.getElementById('close-menu');
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', closeMenuHandler);
     });
 
-    // Initialize Typed.js
     new Typed('#typed-output', {
         strings: [
             'Innovate Forward',
@@ -32,10 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true
     });
 
-    // Initialize GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Scroll Progress Indicator
     window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('scroll-indicator').style.width = scrolled + '%';
     });
 
-    // Animate elements on scroll
     gsap.utils.toArray('.tech-card').forEach(card => {
         gsap.from(card, {
             scrollTrigger: {
@@ -58,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animate featured posts
     gsap.utils.toArray('.featured-post').forEach(post => {
         gsap.from(post, {
             scrollTrigger: {
@@ -73,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
+//quiz
 const quizData = {
     ai: {
         name: 'Artificial Intelligence',
